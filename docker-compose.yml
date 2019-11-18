@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  registry-01:
+    image: registry:2
+    environment:
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/registry.password
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+    volumes:
+      - ./auth:/auth
+      - ./data:/data
+    restart: always
+    networks:
+      back:
+        ipv4_address: 172.44.10.10
+
+networks:
+  back:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.44.10.0/24
