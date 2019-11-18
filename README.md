@@ -2,7 +2,7 @@
 
 First
 
-    # Before you begin must be install this packages
+    # Before you begin must be install following packages
 	sudo apt-get update && sudo apt-get install apache2-utils docker-compose
 
 
