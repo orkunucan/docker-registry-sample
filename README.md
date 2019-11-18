@@ -1,5 +1,6 @@
 ### Private docker registry cook book
 
+First
 
     # Before you begin must be install the this packages
 	sudo apt-get update && sudo apt-get install apache2-utils docker-compose
@@ -20,3 +21,7 @@ Then
 	# Return the root repository folder
 	cd ..
 	docker-compose up -d
+
+You can access your registry server from following link with your local machine
+
+[http://172.44.10.10:5000/](http://172.44.10.10:5000/ "http://172.44.10.10:5000/")
